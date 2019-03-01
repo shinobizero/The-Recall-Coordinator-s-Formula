@@ -15,33 +15,37 @@ def output_formatting(x):
         output = str(math) + ' trillion'
     return output
 
-print("---------------------------------")
-print("The Recall Co-Ordinator's Formula")
-print("---------------------------------")
-print("Take the number of vehicles in the field, A\nMultiply by the probable rate of failure, B\nMultiply by the average out-of-court settlement, C")
-print("A x B x C = X")
-print("If X is less than the cost of a recall, don't do one")
-print("---------------------------------")
-print("Applying the formula:")
+def main():
+    print("---------------------------------")
+    print("The Recall Coordinator's Formula")
+    print("---------------------------------")
+    print("Take the number of vehicles in the field, A\nMultiply by the probable rate of failure, B\nMultiply by the average out-of-court settlement, C")
+    print("A x B x C = X")
+    print("If X is less than the cost of a recall, don't do one")
+    print("---------------------------------")
+    print("Applying the formula:")
 
-a = int(input(" What is the number of vehicles in the field?: "))
-b = int(input(" What is the probable rate of failure?: "))/100
-c = int(input(" What is average out of court settlment?: "))
-recall = int(input(" What is the cost of a recall?: "))
+    a = int(input(" A = What is the number of vehicles in the field?: "))
+    b = int(input(" B = What is the probable rate of failure?: "))/100
+    c = int(input(" C = What is average out of court settlment?: "))
+    recall = int(input(" What is the cost of a recall?: "))
 
-print("---------------------------------")
-x = int(((a/1000000)*b)*(c/1000000)*1000000)
-a_output = output_formatting(a)
-c_output = output_formatting(c)
-x_output = output_formatting(x)
-recall_output = output_formatting(recall)
+    print("---------------------------------")
+    x = int(((a/1000000)*b)*(c/1000000)*1000000)
+    a_output = output_formatting(a)
+    c_output = output_formatting(c)
+    x_output = output_formatting(x)
+    recall_output = output_formatting(recall)
 
-print("X =", a_output, "x", int(b*100), "% x", c_output, "=", x_output )
-print("---------------------------------")
-if x < recall:
-    print(x_output, "is less than", recall_output)
-    print("X is less than the cost of a recall. Don't do one")
-else:
-    print(x_output, "is more than",  recall_output)
-    print("X is more than the cost of a recall. Do one")
-print("---------------------------------")
+    print("X =", a_output, "x", int(b*100), "% x", c_output, "=", x_output )
+    print("---------------------------------")
+    if x < recall:
+        print(x_output, "is less than", recall_output)
+        print("X is less than the cost of a recall. Don't do one")
+    else:
+        print(x_output, "is more than",  recall_output)
+        print("X is more than the cost of a recall. Do one")
+    print("---------------------------------")
+    
+if __name__ == '__main__':
+    main()
